@@ -1,0 +1,35 @@
+{
+    "id": "com.danalock",
+    "name": {
+        "en": "Danalock"
+    },
+    "version": "1.0.0",
+    "compatibility": ">=0.9.1",
+    "author": {
+        "name": "Athom B.V.",
+        "email": "info@athom.com"
+    },
+    "drivers": [
+	    {
+		    "id": "danalock_v2",
+		    "name": {
+			    "en": "Danalock"
+		    },
+		    "class": "lock",
+		    "capabilities": [ "locked" ],
+		    "zwave": {
+			    "manufacturerId": 270,
+			    "productTypeId": 8,
+			    "productId": 2,
+			    "learnmode": {
+				    "image": "/drivers/danalock_v2/assets/learnmode.svg",
+				    "instruction": {
+					    "en": "Hold the button on your Danalock until two beeps have been heard.",
+					    "nl": "Houd de knop op de Danalock ingedrukt tot twee tonen zijn gehoord."
+				    }
+				},
+			    "associationGroups": [ 1 ]
+		    }
+	    }
+    ]
+}
