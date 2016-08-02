@@ -4,17 +4,29 @@
         "en": "Danalock"
     },
     "version": "1.0.0",
-    "compatibility": ">=0.9.1",
+    "compatibility": ">=0.9.2",
     "author": {
         "name": "Athom B.V.",
         "email": "info@athom.com"
     },
+    "category": [ "security" ],
+    "description": {
+		"en": "Let Homey control your Danalock"
+    },
+	"images": {
+		"large": "/assets/images/large.jpg",
+		"small": "/assets/images/small.jpg"
+	},
     "drivers": [
 	    {
 		    "id": "danalock_v2",
 		    "name": {
 			    "en": "Danalock"
 		    },
+			"images": {
+				"large": "/drivers/danalock_v2/assets/images/large.jpg",
+				"small": "/drivers/danalock_v2/assets/images/small.jpg"
+			},
 		    "class": "lock",
 		    "capabilities": [ "locked" ],
 		    "zwave": {
