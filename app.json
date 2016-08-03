@@ -33,6 +33,7 @@
 			    "manufacturerId": 270,
 			    "productTypeId": 8,
 			    "productId": 2,
+			    "requireSecure": true,
 			    "learnmode": {
 				    "image": "/drivers/danalock_v2/assets/learnmode.svg",
 				    "instruction": {
