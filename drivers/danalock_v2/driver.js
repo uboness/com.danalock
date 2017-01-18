@@ -3,7 +3,10 @@
 const path			= require('path');
 const ZwaveDriver	= require('homey-zwavedriver');
 
+// Documentation: http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1532/Danalock%20Product%20manual.pdf
+
 module.exports = new ZwaveDriver( path.basename(__dirname), {
+	debug: true,
 	capabilities: {
 		'locked': {
 			'command_class'				: 'COMMAND_CLASS_DOOR_LOCK',
