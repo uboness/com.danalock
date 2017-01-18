@@ -3,15 +3,24 @@
     "name": {
         "en": "Danalock"
     },
-    "version": "1.0.1",
-    "compatibility": ">=0.9.2",
+    "version": "1.0.2",
+    "compatibility": ">=1.0.3",
     "author": {
         "name": "Athom B.V.",
         "email": "apps@athom.com"
     },
+    "contributors": {
+	"developers": [
+		{
+			"name": "Marco Ruiter",
+			"email": "mruiter@tuxweb.nl"
+		}
+	]
+    },
     "category": [ "security" ],
     "description": {
-		"en": "Let Homey control your Danalock"
+		"en": "Let Homey control your Danalock V2",
+		"nl": "Laat Homey uw Danalock V2 aansturen"
     },
 	"images": {
 		"large": "/assets/images/large.jpg",
@@ -42,7 +51,131 @@
 				    }
 				},
 			    "associationGroups": [ 1 ]
-		    }
-	    }
-    ]
+		    },
+			"settings": [
+				{
+				"id": "direction",
+				"type": "dropdown",
+				"label": {
+					"en": "Turn direction of motor",
+					"nl": "Draairichting van de motor"
+				},
+				"value": "0",
+				"hint": {
+					"en": "You can set turn direction of the motor",
+					"nl": "U kunt de draairichting van de motor te stellen"
+				},
+				"values": [
+					{
+						"id": "0",
+						"label": {
+							"en": "The motor goes clockwise when latched",
+							"nl": "De motor gaat met de klok mee wanneer vergrendeld"
+							}
+					},
+					{
+						"id": "1",
+						"label": {
+							"en": "The motor goes counterclockwise when latched",
+							"nl": "De motor gaat tegen de klok in wanneer vergrendeld"
+							}
+					}
+				]
+			},
+			{
+				"id": "speed",
+				"type": "dropdown",
+				"label": {
+					"en": "Speed (Torque) of motor",
+					"nl": "Snelheid (Torque) van de motor"
+				},
+				"value": "3",
+				"hint": {
+					"en": "You can adjust the Speed (Torque) of the motor",
+					"nl": "U kunt de snelheid (Torque) van de motor aan te passen"
+				},
+				"values": [
+					{
+						"id": "1",
+						"label": {
+							"en": "Slowest",
+							"nl": "Langzaamste"
+							}
+					},
+					{
+						"id": "2",
+						"label": {
+							"en": "Slow",
+							"nl": "Langzaam"
+							}
+					},
+					{
+						"id": "3",
+						"label": {
+							"en": "Normal (Default)",
+							"nl": "Normaal (Standaard)"
+							}
+					},
+					{
+						"id": "4",
+						"label": {
+							"en": "Fast",
+							"nl": "Snel"
+							}
+					},
+					{
+						"id": "5",
+						"label": {
+							"en": "Fastest",
+							"nl": "Snelst"
+							}
+					}
+				]
+			},
+			{
+					"id": "sound",
+					"type": "checkbox",
+					"label": {
+						"en": "Enable the beep sound from latch or unlatch operations",
+						"nl": "Schakel het geluid aan bij ontgrendeling"
+					},
+					"value": true,
+					"hint": {
+						"en": "Sound when locking and unlocking",
+						"nl": "Geluid bij ver- en ontgrendeling schakelen"
+					}
+			},
+      {
+					"id": "turnandgo",
+					"type": "checkbox",
+					"label": {
+						"en": "TurnAndGo on/off",
+						"nl": "TurnAndGo aan/uit"
+					},
+					"value": false,
+					"hint": {
+						"en": "TurnAndGo on will turn automatically when manual turn is detected",
+						"nl": "TurnAndGo op wordt automatisch ingeschakeld wanneer de handmatige draai wordt gedetecteerd"
+					}
+			},
+			{
+					"id": "batteryalarm",
+					"type": "number",
+					"label": {
+						"en": "Battery alarm percentage",
+						"nl": "Batterij alarm percentage"
+					},
+					"value": 15,
+					"attr": {
+						"min": 0,
+						"max": 100
+					},
+					"hint": {
+						"en": "When the battery level is under this value, the device will notify user with a beep sound after latch or unlatch.",
+						"nl": "Als de batterij onder deze waarde zakt zal het apparaat de gebruiker op de hoogte brengenb met een pieptoon na klink of ontgrendelen."
+					}
+			}
+		]
+    }
+   ]
 }
