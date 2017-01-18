@@ -25,40 +25,25 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 		}
 	},
 	settings: {
-		"direction": {
-			"index": 1,
-			"size": 1,
-			"parser": function (input) {
-				return new Buffer([parseInt(input)]);
-			}
+		direction: {
+			index: 1,
+			size: 1,
 		},
-		"speed": {
-			"index": 2,
-			"size": 1,
-			"parser": function (input) {
-				return new Buffer([parseInt(input)]);
-			}
+		speed: {
+			index: 2,
+			size: 1,
 		},
-		"sound": {
-			"index": 6,
-			"size": 1,
-			"parser": function (input) {
-				return new Buffer([parseInt(input)]);
-			}
+		sound: {
+			index: 6,
+			size: 1,
 		},
-		"turnandgo": {
-			"index": 9,
-			"size": 1,
-			"parser": function (input) {
-				return new Buffer([parseInt(input)]);
-			}
+		turn_and_go: {
+			index: 9,
+			size: 1,
 		},
-		"batteryalarm": {
-			"index": 8,
-			"size": 1,
-			"parser": function (input) {
-				return new Buffer([parseInt(input)]);
-			}
+		battery_alarm: {
+			index: 8,
+			size: 1,
 		},
 	}
-})
+});

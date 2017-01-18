@@ -1,152 +1,154 @@
 {
-    "id": "com.danalock",
-    "name": {
-        "en": "Danalock"
-    },
-    "version": "1.0.2",
-    "compatibility": ">=1.0.3",
-    "author": {
-        "name": "Athom B.V.",
-        "email": "apps@athom.com"
-    },
-    "contributors": {
-	"developers": [
-		{
-			"name": "Marco Ruiter",
-			"email": "mruiter@tuxweb.nl"
-		}
-	]
-    },
-    "category": [ "security" ],
-    "description": {
-		"en": "Let Homey control your Danalock V2",
-		"nl": "Laat Homey uw Danalock V2 aansturen"
-    },
+	"id": "com.danalock",
+	"name": {
+		"en": "Danalock"
+	},
+	"version": "1.0.2",
+	"compatibility": ">=1.0.3",
+	"author": {
+		"name": "Athom B.V.",
+		"email": "apps@athom.com"
+	},
+	"contributors": {
+		"developers": [
+			{
+				"name": "Marco Ruiter",
+				"email": "mruiter@tuxweb.nl"
+			}
+		]
+	},
+	"category": [
+		"security"
+	],
+	"description": {
+		"en": "Let Homey control your Danalock (V2)",
+		"nl": "Laat Homey je Danalock (V2) aansturen"
+	},
 	"images": {
 		"large": "/assets/images/large.jpg",
 		"small": "/assets/images/small.jpg"
 	},
-    "drivers": [
-	    {
-		    "id": "danalock_v2",
-		    "name": {
-			    "en": "Danalock"
-		    },
+	"drivers": [
+		{
+			"id": "danalock_v2",
+			"name": {
+				"en": "Danalock"
+			},
 			"images": {
 				"large": "/drivers/danalock_v2/assets/images/large.jpg",
 				"small": "/drivers/danalock_v2/assets/images/small.jpg"
 			},
-		    "class": "lock",
-		    "capabilities": [ "locked" ],
-		    "zwave": {
-			    "manufacturerId": 270,
-			    "productTypeId": 8,
-			    "productId": 2,
-			    "requireSecure": true,
-			    "learnmode": {
-				    "image": "/drivers/danalock_v2/assets/learnmode.svg",
-				    "instruction": {
-					    "en": "Hold the button on your Danalock until two beeps have been heard.",
-					    "nl": "Houd de knop op de Danalock ingedrukt tot twee tonen zijn gehoord."
-				    }
+			"class": "lock",
+			"capabilities": [
+				"locked"
+			],
+			"zwave": {
+				"manufacturerId": 270,
+				"productTypeId": 8,
+				"productId": 2,
+				"requireSecure": true,
+				"learnmode": {
+					"image": "/drivers/danalock_v2/assets/learnmode.svg",
+					"instruction": {
+						"en": "Hold the button on your Danalock until two beeps have been heard.",
+						"nl": "Houd de knop op de Danalock ingedrukt tot twee tonen zijn gehoord."
+					}
 				},
-			    "associationGroups": [ 1 ]
-		    },
+				"associationGroups": [
+					1
+				]
+			},
 			"settings": [
 				{
-				"id": "direction",
-				"type": "dropdown",
-				"label": {
-					"en": "Turn direction of motor",
-					"nl": "Draairichting van de motor"
+					"id": "direction",
+					"type": "dropdown",
+					"label": {
+						"en": "Turn direction of the motor",
+						"nl": "Draairichting van de motor"
+					},
+					"value": "0",
+					"values": [
+						{
+							"id": "0",
+							"label": {
+								"en": "The motor goes clockwise when latched",
+								"nl": "De motor gaat met de klok mee wanneer vergrendeld"
+							}
+						},
+						{
+							"id": "1",
+							"label": {
+								"en": "The motor goes counterclockwise when latched",
+								"nl": "De motor gaat tegen de klok in wanneer vergrendeld"
+							}
+						}
+					]
 				},
-				"value": "0",
-				"hint": {
-					"en": "You can set turn direction of the motor",
-					"nl": "U kunt de draairichting van de motor te stellen"
+				{
+					"id": "speed",
+					"type": "dropdown",
+					"label": {
+						"en": "Speed (torque) of motor",
+						"nl": "Snelheid (draaimoment) van de motor"
+					},
+					"value": "3",
+					"hint": {
+						"en": "Adjust the speed (torque) of the motor",
+						"nl": "Pas de snelheid (draaimoment) van de motor aan"
+					},
+					"values": [
+						{
+							"id": "1",
+							"label": {
+								"en": "Slowest",
+								"nl": "Langzaamste"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "Slow",
+								"nl": "Langzaam"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "Normal (default)",
+								"nl": "Normaal (standaard)"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "Fast",
+								"nl": "Snel"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "Fastest",
+								"nl": "Snelst"
+							}
+						}
+					]
 				},
-				"values": [
-					{
-						"id": "0",
-						"label": {
-							"en": "The motor goes clockwise when latched",
-							"nl": "De motor gaat met de klok mee wanneer vergrendeld"
-							}
-					},
-					{
-						"id": "1",
-						"label": {
-							"en": "The motor goes counterclockwise when latched",
-							"nl": "De motor gaat tegen de klok in wanneer vergrendeld"
-							}
-					}
-				]
-			},
-			{
-				"id": "speed",
-				"type": "dropdown",
-				"label": {
-					"en": "Speed (Torque) of motor",
-					"nl": "Snelheid (Torque) van de motor"
-				},
-				"value": "3",
-				"hint": {
-					"en": "You can adjust the Speed (Torque) of the motor",
-					"nl": "U kunt de snelheid (Torque) van de motor aan te passen"
-				},
-				"values": [
-					{
-						"id": "1",
-						"label": {
-							"en": "Slowest",
-							"nl": "Langzaamste"
-							}
-					},
-					{
-						"id": "2",
-						"label": {
-							"en": "Slow",
-							"nl": "Langzaam"
-							}
-					},
-					{
-						"id": "3",
-						"label": {
-							"en": "Normal (Default)",
-							"nl": "Normaal (Standaard)"
-							}
-					},
-					{
-						"id": "4",
-						"label": {
-							"en": "Fast",
-							"nl": "Snel"
-							}
-					},
-					{
-						"id": "5",
-						"label": {
-							"en": "Fastest",
-							"nl": "Snelst"
-							}
-					}
-				]
-			},
-			{
+				{
 					"id": "sound",
 					"type": "checkbox",
 					"label": {
-						"en": "Enable the beep sound from latch or unlatch operations",
+						"en": "Enable the sound from latch or unlatch operations",
 						"nl": "Schakel het geluid aan bij ontgrendeling"
 					},
 					"value": true,
 					"hint": {
 						"en": "Sound when locking and unlocking",
-						"nl": "Geluid bij ver- en ontgrendeling schakelen"
+						"nl": "Geluid bij vergrendeling en ontgrendeling inschakelen"
 					}
-			},
-      {
-					"id": "turnandgo",
+				},
+				{
+					"id": "turn_and_go",
 					"type": "checkbox",
 					"label": {
 						"en": "TurnAndGo on/off",
@@ -155,11 +157,11 @@
 					"value": false,
 					"hint": {
 						"en": "TurnAndGo on will turn automatically when manual turn is detected",
-						"nl": "TurnAndGo op wordt automatisch ingeschakeld wanneer de handmatige draai wordt gedetecteerd"
+						"nl": "TurnAndGo wordt automatisch ingeschakeld wanneer een handmatige draai wordt gedetecteerd"
 					}
-			},
-			{
-					"id": "batteryalarm",
+				},
+				{
+					"id": "battery_alarm",
 					"type": "number",
 					"label": {
 						"en": "Battery alarm percentage",
@@ -171,11 +173,11 @@
 						"max": 100
 					},
 					"hint": {
-						"en": "When the battery level is under this value, the device will notify user with a beep sound after latch or unlatch.",
-						"nl": "Als de batterij onder deze waarde zakt zal het apparaat de gebruiker op de hoogte brengenb met een pieptoon na klink of ontgrendelen."
+						"en": "When the battery level is under this value, the device will notify the user with a beep sound after latch or unlatch.",
+						"nl": "Als de batterij onder deze waarde zakt zal het apparaat de gebruiker op de hoogte brengen d.m.v. een pieptoon na klink of ontgrendelen."
 					}
-			}
-		]
-    }
-   ]
+				}
+			]
+		}
+	]
 }
