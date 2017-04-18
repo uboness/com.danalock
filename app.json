@@ -3,7 +3,7 @@
 	"name": {
 		"en": "Danalock"
 	},
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"compatibility": ">=1.0.3",
 	"author": {
 		"name": "Athom B.V.",
@@ -44,7 +44,9 @@
 			],
 			"zwave": {
 				"manufacturerId": 270,
-				"productTypeId": 8,
+				"productTypeId": [
+					3, 8
+				],
 				"productId": 2,
 				"requireSecure": true,
 				"learnmode": {
