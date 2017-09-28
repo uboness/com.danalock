@@ -1,185 +1,354 @@
 {
-	"id": "com.danalock",
-	"name": {
-		"en": "Danalock"
-	},
-	"version": "1.0.3",
-	"compatibility": ">=1.0.3",
-	"author": {
-		"name": "Athom B.V.",
-		"email": "apps@athom.com"
-	},
-	"contributors": {
-		"developers": [
-			{
-				"name": "Marco Ruiter",
-				"email": "mruiter@tuxweb.nl"
-			}
-		]
-	},
-	"category": [
-		"security"
-	],
-	"description": {
-		"en": "Let Homey control your Danalock (V2)",
-		"nl": "Laat Homey je Danalock (V2) aansturen"
-	},
-	"images": {
-		"large": "/assets/images/large.jpg",
-		"small": "/assets/images/small.jpg"
-	},
-	"drivers": [
-		{
-			"id": "danalock_v2",
-			"name": {
-				"en": "Danalock"
-			},
-			"images": {
-				"large": "/drivers/danalock_v2/assets/images/large.jpg",
-				"small": "/drivers/danalock_v2/assets/images/small.jpg"
-			},
-			"class": "lock",
-			"capabilities": [
-				"locked"
-			],
-			"zwave": {
-				"manufacturerId": 270,
-				"productTypeId": [
-					3, 8
-				],
-				"productId": 2,
-				"requireSecure": true,
-				"learnmode": {
-					"image": "/drivers/danalock_v2/assets/learnmode.svg",
-					"instruction": {
-						"en": "Hold the button on your Danalock until two beeps have been heard.",
-						"nl": "Houd de knop op de Danalock ingedrukt tot twee tonen zijn gehoord."
-					}
-				},
-				"associationGroups": [
-					1
-				]
-			},
-			"settings": [
-				{
-					"id": "direction",
-					"type": "dropdown",
-					"label": {
-						"en": "Turn direction of the motor",
-						"nl": "Draairichting van de motor"
-					},
-					"value": "0",
-					"values": [
-						{
-							"id": "0",
-							"label": {
-								"en": "The motor goes clockwise when latched",
-								"nl": "De motor gaat met de klok mee wanneer vergrendeld"
-							}
-						},
-						{
-							"id": "1",
-							"label": {
-								"en": "The motor goes counterclockwise when latched",
-								"nl": "De motor gaat tegen de klok in wanneer vergrendeld"
-							}
-						}
-					]
-				},
-				{
-					"id": "speed",
-					"type": "dropdown",
-					"label": {
-						"en": "Speed (torque) of motor",
-						"nl": "Snelheid (draaimoment) van de motor"
-					},
-					"value": "3",
-					"hint": {
-						"en": "Adjust the speed (torque) of the motor",
-						"nl": "Pas de snelheid (draaimoment) van de motor aan"
-					},
-					"values": [
-						{
-							"id": "1",
-							"label": {
-								"en": "Slowest",
-								"nl": "Langzaamste"
-							}
-						},
-						{
-							"id": "2",
-							"label": {
-								"en": "Slow",
-								"nl": "Langzaam"
-							}
-						},
-						{
-							"id": "3",
-							"label": {
-								"en": "Normal (default)",
-								"nl": "Normaal (standaard)"
-							}
-						},
-						{
-							"id": "4",
-							"label": {
-								"en": "Fast",
-								"nl": "Snel"
-							}
-						},
-						{
-							"id": "5",
-							"label": {
-								"en": "Fastest",
-								"nl": "Snelst"
-							}
-						}
-					]
-				},
-				{
-					"id": "sound",
-					"type": "checkbox",
-					"label": {
-						"en": "Enable the sound from latch or unlatch operations",
-						"nl": "Schakel het geluid aan bij ontgrendeling"
-					},
-					"value": true,
-					"hint": {
-						"en": "Sound when locking and unlocking",
-						"nl": "Geluid bij vergrendeling en ontgrendeling inschakelen"
-					}
-				},
-				{
-					"id": "turn_and_go",
-					"type": "checkbox",
-					"label": {
-						"en": "TurnAndGo on/off",
-						"nl": "TurnAndGo aan/uit"
-					},
-					"value": false,
-					"hint": {
-						"en": "TurnAndGo on will turn automatically when manual turn is detected",
-						"nl": "TurnAndGo wordt automatisch ingeschakeld wanneer een handmatige draai wordt gedetecteerd"
-					}
-				},
-				{
-					"id": "battery_alarm",
-					"type": "number",
-					"label": {
-						"en": "Battery alarm percentage",
-						"nl": "Batterij alarm percentage"
-					},
-					"value": 15,
-					"attr": {
-						"min": 0,
-						"max": 100
-					},
-					"hint": {
-						"en": "When the battery level is under this value, the device will notify the user with a beep sound after latch or unlatch.",
-						"nl": "Als de batterij onder deze waarde zakt zal het apparaat de gebruiker op de hoogte brengen d.m.v. een pieptoon na klink of ontgrendelen."
-					}
-				}
-			]
-		}
-	]
+  "id": "com.danalock",
+  "name": {
+    "en": "Danalock"
+  },
+  "sdk": 2,
+  "version": "2.0.0",
+  "compatibility": ">=1.5.0",
+  "author": {
+    "name": "Athom B.V.",
+    "email": "apps@athom.com"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Marco Ruiter",
+        "email": "mruiter@tuxweb.nl"
+      }
+    ]
+  },
+  "category": [
+    "security"
+  ],
+  "description": {
+    "en": "Let Homey control your Danalock locks",
+    "nl": "Laat Homey je Danalock sloten aansturen"
+  },
+  "images": {
+    "large": "/assets/images/large.jpg",
+    "small": "/assets/images/small.jpg"
+  },
+  "drivers": [
+    {
+      "id": "danalock_v2",
+      "name": {
+        "en": "Danalock V2",
+        "nl": "Danalock V2"
+      },
+      "images": {
+        "large": "/drivers/danalock_v2/assets/images/large.jpg",
+        "small": "/drivers/danalock_v2/assets/images/small.jpg"
+      },
+      "class": "lock",
+      "capabilities": [
+        "locked",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "zwave": {
+        "manufacturerId": 270,
+        "productTypeId": 8,
+        "productId": 2,
+        "requireSecure": true,
+        "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1769/Danalock_V2_Product_manual_Z_Wave_V_1.0.3.pdf",
+        "pid": 1769,
+        "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16055061",
+        "learnmode": {
+          "image": "/drivers/danalock_v2/assets/learnmode.svg",
+          "instruction": {
+            "en": "Put Homey into inclusion mode. Hold the button on your Danalock until it beeps twice.",
+            "nl": "Zet Homey in inclusion modus. Houd de knop op de Danalock ingedrukt tot hij twee keer heeft gepiept."
+          }
+        },
+        "unlearnmode": {
+          "image": "/drivers/danalock_v2/assets/learnmode.svg",
+          "instruction": {
+            "en": "Put Homey into inclusion mode. Hold the button on your Danalock until it beeps twice.",
+            "nl": "Zet Homey in inclusion modus. Houd de knop op de Danalock ingedrukt tot hij twee keer heeft gepiept."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Z-Wave Plus Lifeline",
+              "nl": "Z-Wave Plus Lifeline"
+            }
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "1",
+          "type": "dropdown",
+          "label": {
+            "en": "Turn direction of the motor",
+            "nl": "Draairichting van de motor"
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "The motor turns clockwise when latched",
+                "nl": "De motor draait met de klok mee wanneer vergrendeld"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "The motor turns counterclockwise when latched",
+                "nl": "De motor draait tegen de klok in wanneer vergrendeld"
+              }
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "type": "dropdown",
+          "label": {
+            "en": "Speed (torque) of motor",
+            "nl": "Snelheid (draaimoment) van de motor"
+          },
+          "value": "4",
+          "hint": {
+            "en": "Adjust the speed (torque) of the motor",
+            "nl": "Pas de snelheid (draaimoment) van de motor aan"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "Slowest",
+                "nl": "Langzaamst"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Slow",
+                "nl": "Langzaam"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Normal",
+                "nl": "Normaal"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Fast",
+                "nl": "Snel"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "Fastest",
+                "nl": "Snelst"
+              }
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable the sound from latch or unlatch operations",
+            "nl": "Geluid bij ver-/ontgrendelen"
+          },
+          "value": true,
+          "hint": {
+            "en": "Sound when locking and unlocking",
+            "nl": "Geluid bij vergrendeling en ontgrendeling inschakelen"
+          }
+        },
+        {
+          "id": "8",
+          "type": "number",
+          "label": {
+            "en": "Battery alarm threshold",
+            "nl": "Batterij alarm grenswaarde"
+          },
+          "value": 15,
+          "attr": {
+            "min": 0,
+            "max": 100
+          },
+          "hint": {
+            "en": "When the battery level is below this value, the device will notify the user with a beep sound after latch or unlatch.",
+            "nl": "Als de batterij onder deze waarde zakt zal het apparaat de gebruiker op de hoogte brengen d.m.v. een pieptoon bij ver-/ontgrendelen."
+          }
+        },
+        {
+          "id": "9",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn and go",
+            "nl": "Turn and go"
+          },
+          "value": false,
+          "hint": {
+            "en": "TurnAndGo on will turn automatically when manual turn is detected",
+            "nl": "TurnAndGo wordt automatisch ingeschakeld wanneer een handmatige draai wordt gedetecteerd"
+          }
+        }
+      ]
+    },
+    {
+      "id": "danalock_v3",
+      "name": {
+        "en": "Danalock V3",
+        "nl": "Danalock V3"
+      },
+      "images": {
+        "large": "/drivers/danalock_v3/assets/images/large.jpg",
+        "small": "/drivers/danalock_v3/assets/images/small.jpg"
+      },
+      "class": "lock",
+      "capabilities": [
+        "locked",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "zwave": {
+        "manufacturerId": 270,
+        "productTypeId": 9,
+        "productId": 1,
+        "requireSecure": true,
+        "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2556/Danalock_V3_Product_manual_Z_Wave_V_0.9.1.pdf",
+        "pid": 2556,
+        "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-17095764",
+        "learnmode": {
+          "image": "/drivers/danalock_v3/assets/learnmode.svg",
+          "instruction": {
+            "en": "Put Homey in inclusion mode. Push the switch once and wait 5 seconds.",
+            "nl": "Zet Homey in inclusion modus. Druk 1 keer op de knop en wacht 5 seconden."
+          }
+        },
+        "unlearnmode": {
+          "image": "/drivers/danalock_v3/assets/learnmode.svg",
+          "instruction": {
+            "en": "Put Homey in inclusion mode. Push the switch once and wait 5 seconds.",
+            "nl": "Zet Homey in inclusion modus. Druk 1 keer op de knop en wacht 5 seconden."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Z-Wave Plus Lifeline",
+              "nl": "Z-Wave Plus Lifeline"
+            }
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": 1,
+          "value": false,
+          "label": {
+            "en": "Twist assist",
+            "nl": "Draai ondersteuning"
+          },
+          "hint": {
+            "en": "The lock helps with unlocking/locking.",
+            "nl": "Het slot helpt u met ver-/ontgrendelen."
+          },
+          "_size": 1,
+          "type": "checkbox"
+        },
+        {
+          "id": 2,
+          "label": {
+            "en": "Hold and release",
+            "nl": "Naast ontgrendelen ook aanhouden"
+          },
+          "hint": {
+            "en": "After an unlock operation the lock holds the lock, so the door can be opened.\nRange: 0 - 2147483647 seconds.",
+            "nl": "Na ontgrendeling extra ontsluiten zodat deur open valt.\nRange: 0 - 2147483647 seconden."
+          },
+          "_size": 4,
+          "type": "number",
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          }
+        },
+        {
+          "id": 3,
+          "value": false,
+          "label": {
+            "en": "Lock till lock",
+            "nl": "Vergrendel tot blokkade"
+          },
+          "hint": {
+            "en": "The lock will run the motor until it hits resistance.",
+            "nl": "Het slot laat de motor lopen totdat het tegen een blokade aanloopt."
+          },
+          "_size": 1,
+          "type": "checkbox"
+        },
+        {
+          "id": 4,
+          "label": {
+            "en": "Bluetooth temporary allowed",
+            "nl": "Bluetooth tijdelijk toegestaan"
+          },
+          "hint": {
+            "en": "Enable Bluetooth for a number of seconds.\nRange: 0 - 2147483647 seconds.",
+            "nl": "Activeer Bluetooth voor een bepaalde tijd.\nRange: 0 - 2147483647 seconden."
+          },
+          "_size": 4,
+          "type": "number",
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          }
+        },
+        {
+          "id": 5,
+          "value": false,
+          "label": {
+            "en": "Bluetooth always allowed",
+            "nl": "Bluetooth altijd toegestaan"
+          },
+          "_size": 1,
+          "type": "checkbox"
+        },
+        {
+          "id": 6,
+          "label": {
+            "en": "Autolock",
+            "nl": "Automatische vergrendeling"
+          },
+          "hint": {
+            "en": "Auto lock after an unlock.\nRange: 0 - 2147483647 seconds.",
+            "nl": "Vergrendel automatisch na ontgrendelen.\nRange: 0 - 2147483647 seconden."
+          },
+          "_size": 4,
+          "type": "number",
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          }
+        }
+      ]
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "actions": []
+  }
 }
