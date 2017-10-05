@@ -1,0 +1,145 @@
+{
+  "id": "danalock_v3",
+  "name": {
+    "en": "Danalock V3",
+    "nl": "Danalock V3"
+  },
+  "images": {
+    "large": "/drivers/danalock_v3/assets/images/large.jpg",
+    "small": "/drivers/danalock_v3/assets/images/small.jpg"
+  },
+  "class": "lock",
+  "capabilities": [
+    "locked",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "zwave": {
+    "manufacturerId": 270,
+    "productTypeId": 9,
+    "productId": 1,
+    "requireSecure": true,
+    "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2556/Danalock_V3_Product_manual_Z_Wave_V_0.9.1.pdf",
+    "pid": 2556,
+    "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-17095764",
+    "learnmode": {
+      "image": "/drivers/danalock_v3/assets/learnmode.svg",
+      "instruction": {
+        "en": "Put Homey in inclusion mode. Push the switch once and wait 5 seconds.",
+        "nl": "Zet Homey in inclusion modus. Druk 1 keer op de knop en wacht 5 seconden."
+      }
+    },
+    "unlearnmode": {
+      "image": "/drivers/danalock_v3/assets/learnmode.svg",
+      "instruction": {
+        "en": "Put Homey in inclusion mode. Push the switch once and wait 5 seconds.",
+        "nl": "Zet Homey in inclusion modus. Druk 1 keer op de knop en wacht 5 seconden."
+      }
+    },
+    "associationGroups": [
+      1
+    ],
+    "associationGroupsOptions": {
+      "1": {
+        "hint": {
+          "en": "Z-Wave Plus Lifeline",
+          "nl": "Z-Wave Plus Lifeline"
+        }
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": 1,
+      "value": false,
+      "label": {
+        "en": "Twist assist",
+        "nl": "Draai ondersteuning"
+      },
+      "hint": {
+        "en": "The lock helps with unlocking/locking.",
+        "nl": "Het slot helpt u met ver-/ontgrendelen."
+      },
+      "_size": 1,
+      "type": "checkbox"
+    },
+    {
+      "id": 2,
+      "label": {
+        "en": "Hold and release",
+        "nl": "Naast ontgrendelen ook aanhouden"
+      },
+      "hint": {
+        "en": "After an unlock operation the lock holds the lock, so the door can be opened.\nRange: 0 - 2147483647 seconds.",
+        "nl": "Na ontgrendeling extra ontsluiten zodat deur open valt.\nRange: 0 - 2147483647 seconden."
+      },
+      "_size": 4,
+      "type": "number",
+      "value": 0,
+      "attr": {
+        "min": 0,
+        "max": 2147483647
+      }
+    },
+    {
+      "id": 3,
+      "value": false,
+      "label": {
+        "en": "Lock till lock",
+        "nl": "Vergrendel tot blokkade"
+      },
+      "hint": {
+        "en": "The lock will run the motor until it hits resistance.",
+        "nl": "Het slot laat de motor lopen totdat het tegen een blokade aanloopt."
+      },
+      "_size": 1,
+      "type": "checkbox"
+    },
+    {
+      "id": 4,
+      "label": {
+        "en": "Bluetooth temporary allowed",
+        "nl": "Bluetooth tijdelijk toegestaan"
+      },
+      "hint": {
+        "en": "Enable Bluetooth for a number of seconds.\nRange: 0 - 2147483647 seconds.",
+        "nl": "Activeer Bluetooth voor een bepaalde tijd.\nRange: 0 - 2147483647 seconden."
+      },
+      "_size": 4,
+      "type": "number",
+      "value": 0,
+      "attr": {
+        "min": 0,
+        "max": 2147483647
+      }
+    },
+    {
+      "id": 5,
+      "value": false,
+      "label": {
+        "en": "Bluetooth always allowed",
+        "nl": "Bluetooth altijd toegestaan"
+      },
+      "_size": 1,
+      "type": "checkbox"
+    },
+    {
+      "id": 6,
+      "label": {
+        "en": "Autolock",
+        "nl": "Automatische vergrendeling"
+      },
+      "hint": {
+        "en": "Auto lock after an unlock.\nRange: 0 - 2147483647 seconds.",
+        "nl": "Vergrendel automatisch na ontgrendelen.\nRange: 0 - 2147483647 seconden."
+      },
+      "_size": 4,
+      "type": "number",
+      "value": 0,
+      "attr": {
+        "min": 0,
+        "max": 2147483647
+      }
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "id": "danalock_v2",
+  "name": {
+    "en": "Danalock V2",
+    "nl": "Danalock V2"
+  },
+  "images": {
+    "large": "/drivers/danalock_v2/assets/images/large.jpg",
+    "small": "/drivers/danalock_v2/assets/images/small.jpg"
+  },
+  "class": "lock",
+  "capabilities": [
+    "locked",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "zwave": {
+    "manufacturerId": 270,
+    "productTypeId": 8,
+    "productId": 2,
+    "requireSecure": true,
+    "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1769/Danalock_V2_Product_manual_Z_Wave_V_1.0.3.pdf",
+    "pid": 1769,
+    "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16055061",
+    "learnmode": {
+      "image": "/drivers/danalock_v2/assets/learnmode.svg",
+      "instruction": {
+        "en": "Put Homey into inclusion mode. Hold the button on your Danalock until it beeps twice.",
+        "nl": "Zet Homey in inclusion modus. Houd de knop op de Danalock ingedrukt tot hij twee keer heeft gepiept."
+      }
+    },
+    "unlearnmode": {
+      "image": "/drivers/danalock_v2/assets/learnmode.svg",
+      "instruction": {
+        "en": "Put Homey into inclusion mode. Hold the button on your Danalock until it beeps twice.",
+        "nl": "Zet Homey in inclusion modus. Houd de knop op de Danalock ingedrukt tot hij twee keer heeft gepiept."
+      }
+    },
+    "associationGroups": [
+      1
+    ],
+    "associationGroupsOptions": {
+      "1": {
+        "hint": {
+          "en": "Z-Wave Plus Lifeline",
+          "nl": "Z-Wave Plus Lifeline"
+        }
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "1",
+      "type": "dropdown",
+      "label": {
+        "en": "Turn direction of the motor",
+        "nl": "Draairichting van de motor"
+      },
+      "value": "0",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "The motor turns clockwise when latched",
+            "nl": "De motor draait met de klok mee wanneer vergrendeld"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "The motor turns counterclockwise when latched",
+            "nl": "De motor draait tegen de klok in wanneer vergrendeld"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "type": "dropdown",
+      "label": {
+        "en": "Speed (torque) of motor",
+        "nl": "Snelheid (draaimoment) van de motor"
+      },
+      "value": "4",
+      "hint": {
+        "en": "Adjust the speed (torque) of the motor",
+        "nl": "Pas de snelheid (draaimoment) van de motor aan"
+      },
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "Slowest",
+            "nl": "Langzaamst"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Slow",
+            "nl": "Langzaam"
+          }
+        },
+        {
+          "id": "3",
+          "label": {
+            "en": "Normal",
+            "nl": "Normaal"
+          }
+        },
+        {
+          "id": "4",
+          "label": {
+            "en": "Fast",
+            "nl": "Snel"
+          }
+        },
+        {
+          "id": "5",
+          "label": {
+            "en": "Fastest",
+            "nl": "Snelst"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable the sound from latch or unlatch operations",
+        "nl": "Geluid bij ver-/ontgrendelen"
+      },
+      "value": true,
+      "hint": {
+        "en": "Sound when locking and unlocking",
+        "nl": "Geluid bij vergrendeling en ontgrendeling inschakelen"
+      }
+    },
+    {
+      "id": "8",
+      "type": "number",
+      "label": {
+        "en": "Battery alarm threshold",
+        "nl": "Batterij alarm grenswaarde"
+      },
+      "value": 15,
+      "attr": {
+        "min": 0,
+        "max": 100
+      },
+      "hint": {
+        "en": "When the battery level is below this value, the device will notify the user with a beep sound after latch or unlatch.",
+        "nl": "Als de batterij onder deze waarde zakt zal het apparaat de gebruiker op de hoogte brengen d.m.v. een pieptoon bij ver-/ontgrendelen."
+      }
+    },
+    {
+      "id": "9",
+      "type": "checkbox",
+      "label": {
+        "en": "Turn and go",
+        "nl": "Turn and go"
+      },
+      "value": false,
+      "hint": {
+        "en": "TurnAndGo on will turn automatically when manual turn is detected",
+        "nl": "TurnAndGo wordt automatisch ingeschakeld wanneer een handmatige draai wordt gedetecteerd"
+      }
+    }
+  ]
+}
