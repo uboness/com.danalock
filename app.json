@@ -4,7 +4,7 @@
     "en": "Danalock"
   },
   "sdk": 2,
-  "version": "2.0.1",
+  "version": "2.0.2",
   "compatibility": ">=1.5.0",
   "author": {
     "name": "Athom B.V.",
@@ -348,7 +348,36 @@
     }
   ],
   "flow": {
-    "triggers": [],
+    "triggers": [
+      {
+        "id": "lockJammed",
+        "title": {
+          "en": "The lock is jammed",
+          "nl": "Het slot is geblokkeerd"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=danalock_v2"
+          }
+        ]
+      },
+      {
+        "id": "lockJammed",
+        "title": {
+          "en": "The lock is jammed",
+          "nl": "Het slot is geblokkeerd"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=danalock_v3"
+          }
+        ]
+      }
+    ],
     "actions": []
   }
 }
