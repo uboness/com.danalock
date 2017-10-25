@@ -355,6 +355,10 @@
           "en": "The lock is jammed",
           "nl": "Het slot is geblokkeerd"
         },
+        "hint": {
+          "en": "While trying to close the lock something obstructed the lock from closing completely.",
+          "nl": "Tijdens het sluiten van het slot blokkeerde er iets waardoor het slot niet kon worden gesloten."
+        },
         "args": [
           {
             "name": "device",
@@ -368,6 +372,10 @@
         "title": {
           "en": "The lock is jammed",
           "nl": "Het slot is geblokkeerd"
+        },
+        "hint": {
+          "en": "While trying to close the lock something obstructed the lock from closing completely.",
+          "nl": "Tijdens het sluiten van het slot blokkeerde er iets waardoor het slot niet kon worden gesloten."
         },
         "args": [
           {
