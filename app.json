@@ -4,7 +4,7 @@
     "en": "Danalock"
   },
   "sdk": 2,
-  "version": "2.0.2",
+  "version": "2.0.3",
   "compatibility": ">=1.5.0",
   "author": {
     "name": "Athom B.V.",
@@ -48,7 +48,10 @@
       ],
       "zwave": {
         "manufacturerId": 270,
-        "productTypeId": 8,
+        "productTypeId": [
+          3,
+          8
+        ],
         "productId": 2,
         "requireSecure": true,
         "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1769/Danalock_V2_Product_manual_Z_Wave_V_1.0.3.pdf",
