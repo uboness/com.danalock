@@ -14,6 +14,11 @@ Support is available at the following official [forum topic](https://forum.athom
    
 ## Changelog:   
     
+### v 2.0.3
+Update dependencies
+Add lock jammed Flow triggers
+Add product type id for Danalock V125    
+    
 ### v 2.0.0  
 Complete re-write in SDKv2  
 Added support for Danalock V3  
