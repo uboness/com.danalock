@@ -1,5 +1,5 @@
 # Danalock support for Athom Homey  
-Let Homey talk with the Z-Wave versions of the Danalock V2 and V3 devices.  
+Let Homey talk with the Z-Wave versions of the Danalock V2 and V3 devices. Before installation please refer to the device's manual for installation and calibration instructions.
   
 ## Supported devices with most common parameters:
 * Danalock V3-BTZE 
@@ -12,7 +12,10 @@ Let Homey talk with the Z-Wave versions of the Danalock V2 and V3 devices.
 ## Support notes:
 Support is available at the following official [forum topic](https://forum.athom.com/discussion/3908/app-z-wave-danalock-doorlock-z-wave-devices-main-discussion-topic).
    
-## Changelog:   
+## Changelog:
+
+### v 2.0.4:
+Readme update
     
 ### v 2.0.3
 Update dependencies
