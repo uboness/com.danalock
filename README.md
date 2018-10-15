@@ -14,6 +14,9 @@ Support is available at the following official [forum topic](https://forum.athom
    
 ## Changelog:
 
+### v 2.0.5:
+Add battery report interval setting for Danalock V3
+
 ### v 2.0.4:
 Readme update
     

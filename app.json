@@ -4,7 +4,7 @@
     "en": "Danalock"
   },
   "sdk": 2,
-  "version": "2.0.4",
+  "version": "2.0.5",
   "compatibility": ">=1.5.0",
   "author": {
     "name": "Athom B.V.",
@@ -48,10 +48,7 @@
       ],
       "zwave": {
         "manufacturerId": 270,
-        "productTypeId": [
-          3,
-          8
-        ],
+        "productTypeId": 8,
         "productId": 2,
         "requireSecure": true,
         "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1769/Danalock_V2_Product_manual_Z_Wave_V_1.0.3.pdf",
@@ -231,8 +228,8 @@
         "learnmode": {
           "image": "/drivers/danalock_v3/assets/learnmode.svg",
           "instruction": {
-            "en": "Put Homey in inclusion mode. Push the switch once and wait 5 seconds.",
-            "nl": "Zet Homey in inclusion modus. Druk 1 keer op de knop en wacht 5 seconden."
+            "en": "Put Homey in inclusion mode. Push the button in the hole on top of the Danalock once and wait 5 seconds.",
+            "nl": "Zet Homey in inclusion modus. Druk 1 keer op de knop in het gaatje bovenop de Danalock en wacht 5 seconden."
           }
         },
         "unlearnmode": {
@@ -345,6 +342,23 @@
           "attr": {
             "min": 0,
             "max": 2147483647
+          }
+        },
+        {
+          "id": "battery_poll_interval",
+          "label": {
+            "en": "Battery poll interval",
+            "nl": "Batterij poll interval"
+          },
+          "type": "number",
+          "units": {
+            "en": "min",
+            "nl": "min"
+          },
+          "value": 360,
+          "attr": {
+            "min": 0,
+            "max": 10080
           }
         }
       ]
