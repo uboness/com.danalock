@@ -57,15 +57,15 @@
         "learnmode": {
           "image": "/drivers/danalock_v2/assets/learnmode.svg",
           "instruction": {
-            "en": "Put Homey into inclusion mode. Hold the button on your Danalock until it beeps twice.",
-            "nl": "Zet Homey in inclusion modus. Houd de knop op de Danalock ingedrukt tot hij twee keer heeft gepiept."
+            "en": "Press and hold the pair button on the Danalock V2 until it beeps twice.",
+            "nl": "Houd de knop op de Danalock v2 ingedrukt tot hij twee keer heeft gepiept."
           }
         },
         "unlearnmode": {
           "image": "/drivers/danalock_v2/assets/learnmode.svg",
           "instruction": {
-            "en": "Put Homey into inclusion mode. Hold the button on your Danalock until it beeps twice.",
-            "nl": "Zet Homey in inclusion modus. Houd de knop op de Danalock ingedrukt tot hij twee keer heeft gepiept."
+            "en": "Press and hold the pair button on the Danalock V2 until it beeps twice.",
+            "nl": "Houd de knop op de Danalock v2 ingedrukt tot hij twee keer heeft gepiept."
           }
         },
         "associationGroups": [
@@ -228,15 +228,15 @@
         "learnmode": {
           "image": "/drivers/danalock_v3/assets/learnmode.svg",
           "instruction": {
-            "en": "Put Homey in inclusion mode. Push the button in the hole on top of the Danalock once and wait 5 seconds.",
-            "nl": "Zet Homey in inclusion modus. Druk 1 keer op de knop in het gaatje bovenop de Danalock en wacht 5 seconden."
+            "en": "Press the pair button on top of the Danalock V3 with a small pin, pairing will start within 5 seconds.",
+            "nl": "Druk met een klein pinnetje op de knop bovenop de Danalock, het apparaat zal binnen 5 seconden worden toegevoegd."
           }
         },
         "unlearnmode": {
           "image": "/drivers/danalock_v3/assets/learnmode.svg",
           "instruction": {
-            "en": "Put Homey in inclusion mode. Push the switch once and wait 5 seconds.",
-            "nl": "Zet Homey in inclusion modus. Druk 1 keer op de knop en wacht 5 seconden."
+            "en": "Press the pair button on top of the Danalock V3 with a small pin, the device will be removed within 5 seconds.",
+            "nl": "Druk met een klein pinnetje op de knop bovenop de Danalock, het apparaat zal binnen 5 seconden worden verwijderd."
           }
         },
         "associationGroups": [
