@@ -256,7 +256,7 @@
       },
       "settings": [
         {
-          "id": 1,
+          "id": "1",
           "value": false,
           "label": {
             "en": "Twist assist",
@@ -270,7 +270,7 @@
           "type": "checkbox"
         },
         {
-          "id": 2,
+          "id": "2",
           "label": {
             "en": "Hold and release",
             "nl": "Naast ontgrendelen ook aanhouden"
@@ -288,7 +288,7 @@
           }
         },
         {
-          "id": 3,
+          "id": "3",
           "value": false,
           "label": {
             "en": "Lock till lock",
@@ -302,7 +302,7 @@
           "type": "checkbox"
         },
         {
-          "id": 4,
+          "id": "4",
           "label": {
             "en": "Bluetooth temporary allowed",
             "nl": "Bluetooth tijdelijk toegestaan"
@@ -320,7 +320,7 @@
           }
         },
         {
-          "id": 5,
+          "id": "5",
           "value": false,
           "label": {
             "en": "Bluetooth always allowed",
@@ -330,7 +330,7 @@
           "type": "checkbox"
         },
         {
-          "id": 6,
+          "id": "6",
           "label": {
             "en": "Autolock",
             "nl": "Automatische vergrendeling"
@@ -348,6 +348,203 @@
           }
         }
       ]
+    },
+    {
+      "id": "universal_module_v3",
+      "name": {
+        "en": "Universal Module V3",
+        "nl": "Universal Module V3"
+      },
+      "images": {
+        "large": "/drivers/universal_module_v3/assets/images/large.jpg",
+        "small": "/drivers/universal_module_v3/assets/images/small.jpg"
+      },
+      "class": "lock",
+      "capabilities": [
+        "locked",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "zwave": {
+        "manufacturerId": 270,
+        "productTypeId": 9,
+        "productId": 2,
+        "requireSecure": true,
+        "productDocumentation": "https://danalock.com/wp-content/uploads/guides/universal_module/UMV3-manual_85x85mm_ENG.pdf",
+        "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-18026026",
+        "learnmode": {
+          "image": "/drivers/universal_module_v3/assets/learnmode.svg",
+          "instruction": {
+            "en": "Put Homey in inclusion mode. Push the button found in the small hole on the module."
+          }
+        },
+        "unlearnmode": {
+          "image": "/drivers/universal_module_v3/assets/learnmode.svg",
+          "instruction": {
+            "en": "Put Homey in inclusion mode. Push the button found in the small hole on the module."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Z-Wave Plus Lifeline",
+              "nl": "Z-Wave Plus Lifeline"
+            }
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "1",
+          "label": {
+            "en": "Relay 1 Pulse length (ms)"
+          },
+          "hint": {
+            "en": "Time the relay is on in milliseconds (0 to 2147483647)."
+          },
+          "_size": 4,
+          "type": "number",
+          "value": 5000,
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Relay 1 Delay length (ms)"
+          },
+          "hint": {
+            "en": "Time before the relay is activated (0 to 2147483647)."
+          },
+          "_size": 4,
+          "type": "number",
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          }
+        },
+        {
+          "id": "3",
+          "label": {
+            "en": "Relay 2 Pulse length (ms)"
+          },
+          "hint": {
+            "en": "Time the relay is on in milliseconds (0 to 2147483647)."
+          },
+          "_size": 4,
+          "type": "number",
+          "value": 5000,
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          }
+        },
+        {
+          "id": "4",
+          "label": {
+            "en": "Relay 2 Delay length (ms)"
+          },
+          "hint": {
+            "en": "Time before the relay is activated (0 to 2147483647)."
+          },
+          "_size": 4,
+          "type": "number",
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          }
+        },
+        {
+          "id": "7",
+          "value": false,
+          "label": {
+            "en": "Disable battery alarm"
+          },
+          "_size": 1,
+          "type": "checkbox"
+        },
+        {
+          "id": "8",
+          "label": {
+            "en": "Battery Sample Interval Seconds"
+          },
+          "hint" : {
+            "en" : "Set to 0 to turn sampling off"
+          },
+          "_size": 4,
+          "type": "number",
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          }
+        },
+        {
+          "id": "9",
+          "label": {
+            "en": "Battery Milli Volt Level Threshold Maximum"
+          },
+          "hint" : {
+            "en" : "Maximum battery alarm level in mV."
+          },
+          "type": "number",
+          "value": 0,
+          "_size": 4,
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "Battery Milli Volt Level Threshold Minimum"
+          },
+          "hint" : {
+            "en" : "Minimum battery alarm level in mV."
+          },
+          "type": "number",
+          "value" : 0,
+          "_size": 4,
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          }
+        },
+        {
+          "id": 11,
+          "label": {
+            "en": "BLE temporary allow – timer - seconds"
+          },
+          "hint" : {
+            "en" : "Set to 0 to turn off. Number represents seconds Bluetooth Smart is on."
+          },
+          "type": "number",
+          "_size": 4,
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          }
+        },
+        {
+          "id": 12,
+          "value": false,
+          "label": {
+            "en": "BLE always allowed"
+          },
+          "_size": 1,
+          "type": "checkbox"
+        }
+      ],
+      "triggers": []
     }
   ],
   "flow": {
